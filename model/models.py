@@ -1,7 +1,10 @@
 from pydantic import BaseModel
 
 
-class Task(BaseModel):
-    id: int
+class TaskRequest(BaseModel):
     title: str
     status: str
+
+
+class Task(TaskRequest):
+    id: int
