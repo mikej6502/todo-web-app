@@ -17,8 +17,8 @@ class InMemoryTaskRepository(BaseTaskRepository):
         self.tasks[1] = Task(id='1', title='Build GET API', status='Todo')
         self.next_id = 2
 
-    def get_task(self, task_id: int) -> Task:
-        """Get a task by ID, raised TaskNotFoundException if not found"""
+    def get_task(self, task_id: int) -> Task | None:
+        """Get a task by ID, or return None if not found"""
         if task_id not in self.tasks:
-            raise TaskNotFoundException(f"Task not found for id: {task_id}")
+            return None
         return self.tasks[task_id]
