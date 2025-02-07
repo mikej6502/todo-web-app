@@ -1,12 +1,9 @@
-from unittest.mock import Mock
-
 import pytest
+from unittest.mock import Mock
 from fastapi import HTTPException
-
 from main import get_task
 from model.models import Task
 from service.exceptions import TaskNotFoundException
-from service.task_service import TaskService
 
 
 def test_should_get_task_by_id():
