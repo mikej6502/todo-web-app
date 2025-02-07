@@ -10,8 +10,18 @@ app = FastAPI()
 
 def get_task_service():
     repository = InMemoryTaskRepository()
+    __populate_test_data(repository)
+
     task_service = TaskService(repository)
     return task_service
+
+
+def __populate_test_data(repository: InMemoryTaskRepository):
+    task1 = Task(id=0, title='Build GET API', status='Todo')
+    task2 = Task(id=0, title='Build POST API', status='Todo')
+
+    repository.create_task(task1)
+    repository.create_task(task2)
 
 
 @app.get("/api/todo-service/task/{id}", tags=["todo"])
