@@ -35,7 +35,7 @@ def get_task(task_id: int, task_service=Depends(get_task_service)) -> Task:
         raise HTTPException(status_code=404, detail=f"Task not found for id {task_id}")
 
 
-@app.post("/api/todo-service/task/{id}", response_model=Task, status_code=status.HTTP_201_CREATED, tags=["todo"])
+@app.post("/api/todo-service/task", response_model=Task, status_code=status.HTTP_201_CREATED, tags=["todo"])
 def post_task(task_request: TaskRequest, task_service=Depends(get_task_service)) -> Task:
     task = Task(id=0, title=task_request.title, status=task_request.status)
     return task_service.create_task(task)
