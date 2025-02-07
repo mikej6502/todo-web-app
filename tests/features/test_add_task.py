@@ -4,7 +4,7 @@ from model.models import TaskRequest
 from test_client import TodoServiceClient
 
 
-@scenario('add_task.feature', 'User adds a new task to the list')
+@scenario('test_add_task.feature', 'User adds a new task to the list')
 def test_add_task():
     """ Test Runner"""
 

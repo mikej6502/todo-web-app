@@ -1,8 +1,6 @@
 import json
 from urllib.parse import urljoin
-
 from fastapi.testclient import TestClient
-
 from main import app
 from model.models import TaskRequest, Task
 

@@ -8,12 +8,11 @@ pip install -r requirements.txt
 
 ### pip upgrade 
 
-It maybe required to update pip 
+If pip is unable to install packages, it maybe required to update pip 
 
 ```
 python -m ensurepip --upgrade
 python -m pip install --upgrade setuptools
-python -m pip install <module>
 ```
 
 ## Test
@@ -21,6 +20,13 @@ python -m pip install <module>
 ### Unit Tests
 ```
 pytest tests/unit-tests
+```
+
+### Integrtion Tests
+
+A suite of Cucumber BDD Tests
+```
+pytest tests/feature
 ```
 
 ### Coverage
