@@ -1,7 +1,7 @@
 import pytest
 from unittest.mock import Mock
 from fastapi import HTTPException
-from main import get_task, get_task_service, post_task
+from routes.api import get_task, get_task_service, post_task
 from model.models import Task, TaskRequest
 from repository.repository import InMemoryTaskRepository
 from service.exceptions import TaskNotFoundException
