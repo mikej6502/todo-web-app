@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, Depends, HTTPException
 from starlette import status
 
@@ -38,3 +39,7 @@ def get_task(task_id: int, task_service=Depends(get_task_service)) -> Task:
 def post_task(task_request: TaskRequest, task_service=Depends(get_task_service)) -> Task:
     task = Task(id=0, title=task_request.title, status=task_request.status)
     return task_service.create_task(task)
+
+
+if __name__ == '__main__':
+    uvicorn.run('main:app', host='0.0.0.0', port=8000)
