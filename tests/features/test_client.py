@@ -12,7 +12,7 @@ class TodoServiceClient:
 
     def create_item(self, task: TaskRequest) -> (int, Task):
         url = urljoin(self.base_url, '/api/todo-service/task/')
-        response = self.client.post(url, json=json.loads(task.json()))
+        response = self.client.post(url, json=json.loads(task.model_dump_json()))
 
         if response.status_code != 201:
             raise Exception(f'Unable to create task.Status Code {response.status_code}')

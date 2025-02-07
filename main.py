@@ -1,7 +1,5 @@
 import uvicorn
-from fastapi import FastAPI, Depends, HTTPException
-from starlette import status
-
+from fastapi import FastAPI, Depends, HTTPException, status
 from model.models import Task, TaskRequest
 from repository.repository import InMemoryTaskRepository
 from service.exceptions import TaskNotFoundException
@@ -16,7 +14,6 @@ def __populate_test_data(repository: InMemoryTaskRepository):
 
     repository.create_task(task1)
     repository.create_task(task2)
-
 
 repository = InMemoryTaskRepository()
 __populate_test_data(repository)
