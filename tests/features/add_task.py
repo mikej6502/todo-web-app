@@ -1,6 +1,6 @@
 from pytest_bdd import given, when, then, parsers, scenario
 
-from model.models import TaskRequest, Task
+from model.models import TaskRequest
 from test_client import TodoServiceClient
 
 
