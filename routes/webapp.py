@@ -8,8 +8,8 @@ web_router = APIRouter()
 templates = Jinja2Templates(directory="templates")
 
 
-@web_router.get("/", tags='website')
-def display_all_items(request: Request):
+@web_router.get("/", tags=['website'])
+def render_all_items_page(request: Request):
     tasks: list[Task] = get_tasks(get_task_service())
 
     return templates.TemplateResponse("index.html", {"request": request, "tasks": tasks})
